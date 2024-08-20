@@ -36,6 +36,13 @@ public class SongPartController {
                 new ArrayList<>()
         );
 
+        songRepository.save(new Song(
+                song.id(),
+                song.name(),
+                part,
+                song.difficulty()
+        ));
+
         songPartRepository.save(songPart);
         return songPart;
     }
@@ -43,7 +50,7 @@ public class SongPartController {
     @GetMapping("/songchords/{songId}/{partNumber}")
     public SongPart getSongChord(@PathVariable String songId, @PathVariable Integer partNumber) {
         SongPartKey key = new SongPartKey(songId, partNumber);
-        return songPartRepository.findById(key)
+        return songPartRepository.findByKey(key)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "SongChord not found for songId " + songId + " and partNumber " + partNumber));
     }
 

@@ -1,9 +1,8 @@
 package com.medsingla.harmonium_backend.songparts;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import java.util.List;
+import java.util.Optional;
 
 public interface SongPartRepository extends MongoRepository<SongPart, SongPartKey> {
-    List<SongPart> findByKeySongId(String songId);
+    Optional<SongPart> findByKey(SongPartKey key);
 }

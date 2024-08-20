@@ -31,24 +31,24 @@ public class HarmoniumBackendApplication implements CommandLineRunner {
 		songRepository.deleteAll();
 		songPartRepository.deleteAll();
 
-		Song song = new Song(
-				"2",
-				"Medhansh's Song",
-				0,
-				Difficulty.EASY
-		);
-		songRepository.save(song);
-		songRepository.findAll().forEach(System.out::println);
-
-		SongPart songPart = new SongPart(
-				new SongPartKey(
-						"2",
-						1
-				),
-				new ArrayList<>()
-		);
-		songPartRepository.save(songPart);
-		songPartRepository.findAll().forEach(System.out::println);
+//		Song song = new Song(
+//				"2",
+//				"Medhansh's Song",
+//				0,
+//				Difficulty.EASY
+//		);
+//		songRepository.save(song);
+//		songRepository.findAll().forEach(System.out::println);
+//
+//		SongPart songPart = new SongPart(
+//				new SongPartKey(
+//						"2",
+//						1
+//				),
+//				new ArrayList<>()
+//		);
+//		songPartRepository.save(songPart);
+//		songPartRepository.findAll().forEach(System.out::println);
 
 	}
 }
